@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AscendNorth Training – Focus. Trust. Control.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AscendNorth Training – professional firearms and safety training with a calm, structured and responsible approach. Focus. Trust. Control." />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-main: #050b16;
+      --bg-alt: #0b1324;
+      --bg-card: #0f172a;
+      --accent: #6fb7c9;
+      --accent-soft: #89c8d7;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-soft: rgba(148, 163, 184, 0.4);
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.65);
+      --radius-lg: 18px;
+      --radius-xl: 22px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: linear-gradient(to bottom, rgba(5, 11, 22, 0.98), rgba(5, 11, 22, 0.92));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0;
+      gap: 1rem;
+    }
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-main {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .logo-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .nav-group {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      padding: 0.25rem 0.35rem;
+      border-radius: 999px;
+      transition: color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+      background-color: rgba(15, 23, 42, 0.8);
+    }
+
+    .nav-cta {
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .nav-cta:hover {
+      background-color: var(--accent);
+      color: #020617;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding-left: 0.75rem;
+      border-left: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .lang-btn {
+      border: 0;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-muted);
+    }
+
+    .lang-btn.active {
+      background: rgba(111, 183, 201, 0.16);
+      color: var(--accent-soft);
+      border: 1px solid rgba(111, 183, 201, 0.4);
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, #111827 0, #020617 45%, #000000 100%);
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.75rem;
+      color: var(--accent-soft);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-claim {
+      font-size: 1.05rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero p {
+      max-width: 34rem;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.9rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #020617;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-soft);
+      transform: translateY(-1px);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+    }
+
+    .btn-ghost {
+      border-color: var(--border-soft);
+      color: var(--text-main);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .hero-sidecard {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8));
+      border-radius: var(--radius-xl);
+      padding: 1.4rem 1.5rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    .hero-sidecard-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-sidecard-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background-color: rgba(148, 163, 184, 0.15);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-sidecard ul {
+      list-style: none;
+      margin-top: 0.6rem;
+    }
+
+    .hero-sidecard li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-muted);
+    }
+
+    .hero-sidecard li span.check {
+      display: inline-block;
+      width: 0.9rem;
+      margin-top: 0.15rem;
+      color: var(--accent-soft);
+    }
+
+    main {
+      background: radial-gradient(circle at top, #0b1120 0, #020617 55%, #000000 100%);
+    }
+
+    section.section {
+      padding: 3rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .section-lead {
+      max-width: 36rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #111827 0, #020617 70%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.3rem 1.35rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.65);
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-main);
+    }
+
+    .card .tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.18rem 0.6rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background-color: rgba(148, 163, 184, 0.16);
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .badge-accent {
+      background-color: rgba(111, 183, 201, 0.16);
+      color: var(--accent-soft);
+      border: 1px solid rgba(111, 183, 201, 0.4);
+    }
+
+    .card-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .card-list li {
+      display: flex;
+      gap: 0.45rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-list li span.bullet {
+      font-size: 0.85rem;
+      margin-top: 0.1rem;
+      color: var(--accent-soft);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .about-highlight {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85));
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-soft);
+      padding: 1.4rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+
+    .about-highlight h3 {
+      font-size: 1.02rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
+    }
+
+    .about-highlight p {
+      margin-bottom: 0.4rem;
+    }
+
+    .about-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .about-chip {
+      padding: 0.18rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: var(--text-muted);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-main);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-card {
+      background: radial-gradient(circle at top left, #111827 0, #020617 70%);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-soft);
+      padding: 1.6rem 1.7rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .contact-card p {
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-top: 0.6rem;
+    }
+
+    .contact-mail {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      color: var(--accent-soft);
+      font-weight: 500;
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(111, 183, 201, 0.45);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .contact-mail:hover {
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .legal-note {
+      font-size: 0.78rem;
+      color: #6b7280;
+      margin-top: 0.9rem;
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(31, 41, 55, 1);
+      background: #020617;
+      padding: 1.2rem 0 1.6rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .footer-inner a {
+      color: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    .footer-inner a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .site-header {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-block">
+  <img src="ascendnorth-logo.svg" alt="AscendNorth Training Logo" style="height:62px; display:block;">
+  <span class="logo-sub" data-de="Fokus. Vertrauen. Kontrolle.">Focus. Trust. Control.</span>
+</div>
+      <div class="nav-group">
+        <nav class="nav-links">
+          <a href="#home" data-de="Start">Home</a>
+          <a href="#programs" data-de="Training">Training</a>
+          <a href="#approach" data-de="Ansatz">Approach</a>
+          <a href="#info" data-de="Infos">Practical</a>
+          <a href="#contact" data-de="Kontakt">Contact</a>
+          <a href="#contact" class="nav-cta" data-de="Training anfragen">Book training</a>
+        </nav>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="de">DE</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="hero-kicker" data-de="Professionelles Waffen- &amp; Sicherheitstraining">Professional firearms &amp; safety training</div>
+          <h1 data-de="Ruhig trainieren. Kontrolliert schießen. Sicher bleiben.">Train calm. Shoot controlled. Stay safe.</h1>
+          <div class="hero-claim" data-de="Fokus. Vertrauen. Kontrolle.">Focus. Trust. Control.</div>
+          <p data-de="AscendNorth Training bietet strukturiertes Waffen- und Sicherheitstraining für Zivilpersonen und Sicherheitskräfte, die unter ruhiger Anleitung sichere, wiederholbare Abläufe aufbauen möchten – ohne Ego, Lärm oder taktische Show.">
+            AscendNorth Training offers structured firearms and safety training for civilians
+            and security professionals who want to build safe, repeatable habits under guidance –
+            without ego, noise or tactical show.
+          </p>
+          <div class="hero-buttons">
+            <a href="#programs" class="btn btn-primary" data-de="Trainingsübersicht anzeigen">View training programs</a>
+            <a href="#contact" class="btn btn-ghost" data-de="Individuelles Training anfragen">Request individual training</a>
+          </div>
+        </div>
+        <aside class="hero-sidecard">
+          <div class="hero-sidecard-pill" data-de="Sicherheit und Mindset zuerst">
+            <span>●</span>
+            <span>Safety and mindset first</span>
+          </div>
+          <div class="hero-sidecard-title" data-de="Ruhiges Training. Klare Rückmeldungen. Echte Fortschritte.">Calm training. Clear feedback. Real progress.</div>
+          <p data-de="Gedacht für Einsteiger und erfahrene Schützen, die in einem sicheren, strukturierten Rahmen wachsen wollen – von den Grundlagen bis zu anspruchsvolleren Übungen – immer mit Verantwortung im Mittelpunkt.">
+            Designed for beginners and experienced shooters who want a safe, structured environment
+            to grow: from basic handling to more advanced drills – always with responsibility at the core.
+          </p>
+          <ul>
+            <li>
+              <span class="check">✓</span>
+              <span data-de="Fokus auf Sicherheit, Kontrolle und verantwortungsvollen Umgang">Focus on safety, control and responsible use</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span data-de="Kleine Gruppen oder 1:1-Training für maximale Aufmerksamkeit">Small groups or 1:1 training for maximum attention</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span data-de="Training mit eigener Waffe oder Trainerwaffen (im gesetzlich zulässigen Rahmen)">Use of your own firearm or trainer’s firearms (where legally permitted)</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker" data-de="Trainingsprogramme">Training programs</div>
+          <div class="section-title-row">
+            <h2 class="section-title" data-de="Klare Struktur, realistischer Inhalt.">Clear structure, realistic content.</h2>
+            <p class="section-lead" data-de="Jedes Modul ist rund um Sicherheit, ruhige Ausführung und klare Rückmeldungen aufgebaut. Kein Taktik-Theater, kein Leistungsdruck – ehrliches Training auf deinem Niveau.">
+              Each module is built around safety, calm execution and clear feedback.
+              No tactics-theatre, no pressure to perform – just honest training at your level.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="pill badge-accent" data-de="Basis">Foundations</div>
+            <h3 data-de="Kurzwaffen-Basics &amp; Sicherheit">Handgun Basics &amp; Safety</h3>
+            <div class="tagline" data-de="Erste Schritte am Schießstand">First steps on the range</div>
+            <p data-de="Ideal für Einsteiger und Wiedereinsteiger, die eine solide, sichere Basis mit klarer, geduldiger Anleitung aufbauen möchten.">
+              Ideal for beginners and returning shooters who want a solid, safe foundation with
+              clear, patient instruction.
+            </p>
+            <ul class="card-list">
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Sicherheitsregeln, Mindset &amp; Verhalten am Schießstand">Safety rules, mindset &amp; range etiquette</span>
+              </li>
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Griff, Stand, Visierbild, Abzugsarbeit">Grip, stance, sight picture, trigger press</span>
+              </li>
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Erste Schüsse unter enger Aufsicht">First live fire under close supervision</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="pill" data-de="Aufbau">Progression</div>
+            <h3 data-de="Präzisions- &amp; Kontroll-Drills">Precision &amp; Control Drills</h3>
+            <div class="tagline" data-de="Vom Treffen zum Gruppieren">From hitting to grouping</div>
+            <p data-de="Für Schützen, die die Grundlagen bereits kennen und mehr Konstanz, engere Trefferbilder und sauberere Abläufe wollen.">
+              For shooters who already know the basics and want more consistency, tighter groups
+              and cleaner execution.
+            </p>
+            <ul class="card-list">
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Verfeinerung der Grundlagen unter leichtem Stress">Refinement of fundamentals under mild stress</span>
+              </li>
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Arbeiten an Präzision, Schussrhythmus und Distanzen">Accuracy, cadence and distance work</span>
+              </li>
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Wenn möglich: Video-Feedback zur Analyse">Video-based feedback where possible</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="pill" data-de="1 : 1">1 : 1</div>
+            <h3 data-de="Individuelles Training">Individual training</h3>
+            <div class="tagline" data-de="Auf deine Situation zugeschnitten">Tailored to your context</div>
+            <p data-de="Einzeltrainings, die sich an deinen Zielen orientieren – von der Vorbereitung auf die Waffenbesitzkarte bis zu spezifischen Fertigkeiten oder beruflichen Anforderungen.">
+              One-to-one sessions built around your goals: from licensing preparation to specific
+              skills or professional demands.
+            </p>
+            <ul class="card-list">
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Individuelle Standortbestimmung &amp; Trainingsplan">Personal diagnostics &amp; training plan</span>
+              </li>
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Flexible Inhalte und Intensität">Flexible content and intensity</span>
+              </li>
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Diskretes, fokussiertes Trainingssetting">Discreet, focused training setting</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section id="approach" class="section">
+      <div class="container two-column">
+        <div>
+          <div class="section-header">
+            <div class="section-kicker" data-de="Ansatz &amp; Philosophie">Approach &amp; philosophy</div>
+            <h2 class="section-title" data-de="Sicherheit, Ruhe und Verantwortung zuerst.">Safety, calm and responsibility first.</h2>
+          </div>
+          <p class="section-lead" data-de="Waffentraining geht nicht um Ego, Status oder Geschwindigkeit um jeden Preis. Es geht darum, ruhig zu bleiben, klar zu entscheiden und ein gefährliches Werkzeug respektvoll zu führen – jedes einzelne Mal.">
+            Firearms training is not about ego, status or speed at any price. It is about learning to
+            stay calm, make clear decisions and handle a dangerous tool with respect – every single time.
+          </p>
+          <div class="grid grid-2" style="margin-top: 1.5rem;">
+            <article class="card">
+              <h3 data-de="Sicherheit als Gewohnheit">Safety as a habit</h3>
+              <p data-de="Jede Einheit beginnt mit Mindset und Sicherheit. Regeln werden nicht nur gesagt, sondern gelebt – bis korrektes Verhalten zur Gewohnheit wird.">
+                Every session starts with mindset and safety. Rules are not just spoken, they are lived –
+                until correct behavior becomes automatic.
+              </p>
+            </article>
+            <article class="card">
+              <h3 data-de="Ruhe unter Druck">Calm under pressure</h3>
+              <p data-de="Belastung wird langsam und gezielt aufgebaut. Du lernst, präsent zu bleiben, zu atmen und sauber auszuführen – auch wenn der Puls steigt.">
+                Stress is built up slowly and intelligently. You learn to stay present, breathe and execute
+                cleanly – even when your pulse rises.
+              </p>
+            </article>
+          </div>
+        </div>
+        <aside class="about-highlight">
+          <h3 data-de="Wer steckt hinter AscendNorth Training?">Who's behind AscendNorth Training?</h3>
+          <p data-de="AscendNorth Training wird von einem Trainer mit Praxiserfahrung im Justizdienst, Konfliktmanagement und einsatztaktischer Ausbildung aufgebaut – kombiniert mit einem ruhigen, strukturierten Lehrstil.">
+            AscendNorth Training is built by an instructor with real-world experience in correctional
+            services, conflict management and tactical training – combined with a calm, structured
+            teaching style.
+          </p>
+          <p data-de="Im Mittelpunkt stehen respektvoller Umgang, klare Kommunikation und ein Lernumfeld, in dem Fragen erwünscht sind und Fehler als Teil des Prozesses gesehen werden.">
+            The focus is on respectful interaction, clear communication and a learning atmosphere in which
+            questions are welcome and mistakes are treated as part of the process.
+          </p>
+          <div class="about-meta">
+            <span class="about-chip" data-de="Erfahrung in verantwortungsvollen Bereichen">Experience in high-responsibility environments</span>
+            <span class="about-chip" data-de="Einsteigerfreundliches, geduldiges Training">Beginner-friendly &amp; patient training</span>
+            <span class="about-chip" data-de="Modernes, verantwortungsbewusstes Trainingsverständnis">Modern, responsible training mindset</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PRACTICAL INFO -->
+    <section id="info" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker" data-de="Praktische Infos">Practical information</div>
+          <div class="section-title-row">
+            <h2 class="section-title" data-de="Was du vor einer Buchung wissen solltest.">What you should know before booking.</h2>
+          </div>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3 data-de="Für wen das Training gedacht ist">Who the training is for</h3>
+            <ul class="card-list">
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Neulinge, die einen sicheren und strukturierten Einstieg wollen">New shooters who want a safe and structured introduction</span>
+              </li>
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Bestehende Waffenbesitzer, die ihre Fertigkeiten auffrischen möchten">Existing license holders who want to refresh skills</span>
+              </li>
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Sicherheitskräfte, die zusätzlich ruhiges Training suchen">Security professionals seeking additional, calm training</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 data-de="Waffen &amp; Ausrüstung">Firearms &amp; equipment</h3>
+            <ul class="card-list">
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Training mit eigener Waffe oder Trainerwaffen möglich (im gesetzlich zulässigen Rahmen)">Training can be done with your own firearm or with trainer-provided firearms (where legally permitted)</span>
+              </li>
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Alle Schießtrainings finden ausschließlich auf zugelassenen Schießstätten statt">All live-fire sessions take place only on approved ranges</span>
+              </li>
+              <li>
+                <span class="bullet">•</span>
+                <span data-de="Genauere Ausrüstung wird vor jeder Einheit individuell besprochen">Exact equipment details are discussed individually before each session</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-grid">
+          <div class="info-item">
+            <strong data-de="Ort">Location</strong>
+            <span data-de="Die Trainings finden auf ausgewählten Schießständen in Österreich statt. Die genaue Location wird für jede Buchung persönlich abgestimmt.">
+              Trainings take place on selected shooting ranges in Austria. Details will be coordinated personally for each booking.
+            </span>
+          </div>
+          <div class="info-item">
+            <strong data-de="Voraussetzungen">Requirements</strong>
+            <span data-de="Alle Teilnehmer müssen die gesetzlichen Voraussetzungen für den Umgang mit Schusswaffen erfüllen. Identitätskontrolle und Standordnung gelten ohne Ausnahme.">
+              All participants must comply with local legal requirements for firearms use. Identity checks and range rules apply without exception.
+            </span>
+          </div>
+          <div class="info-item">
+            <strong data-de="Sprache">Language</strong>
+            <span data-de="Das Training findet in der Regel auf Deutsch statt, auf Wunsch ist Englisch möglich.">
+              Training is available in German (primary) and English (on request).
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker" data-de="Kontakt &amp; Buchung">Contact &amp; booking</div>
+          <h2 class="section-title" data-de="Bereit, mit Fokus, Vertrauen und Kontrolle zu trainieren?">Ready to train with focus, trust and control?</h2>
+        </div>
+        <div class="contact-card">
+          <p data-de="Wenn du Interesse an einem Training, Gruppenkurs oder einer individuellen Einheit hast, schreib bitte eine kurze E-Mail mit folgenden Informationen:">
+            If you are interested in a training session, group course or individual session,
+            please send a short email with the following information:
+          </p>
+          <ul class="card-list">
+            <li>
+              <span class="bullet">•</span>
+              <span data-de="Dein aktuelles Niveau (Einsteiger, etwas Erfahrung, fortgeschritten)">Your current experience level (beginner, some experience, advanced)</span>
+            </li>
+            <li>
+              <span class="bullet">•</span>
+              <span data-de="Ob du bereits eine eigene Waffe besitzt">Whether you already have your own firearm</span>
+            </li>
+            <li>
+              <span class="bullet">•</span>
+              <span data-de="Bevorzugte Region / bevorzugter Schießstand (falls vorhanden)">Preferred region / shooting range (if any)</span>
+            </li>
+            <li>
+              <span class="bullet">•</span>
+              <span data-de="Worauf du den Schwerpunkt legen möchtest (Sicherheit, Basics, Präzision usw.)">What you would like to focus on (safety, basics, precision, etc.)</span>
+            </li>
+          </ul>
+          <div class="contact-line">
+            <span data-de="📧 Kontakt:">📧 Contact:</span>
+            <a class="contact-mail" href="mailto:christian-klinger@gmx.net?subject=AscendNorth%20Training%20request">
+              christian-klinger@gmx.net
+            </a>
+          </div>
+          <p class="legal-note" data-de="Hinweis: AscendNorth Training bietet privates Training an. Es werden keine Waffen oder Munition verkauft. Alle Trainings finden ausschließlich im Rahmen der geltenden gesetzlichen Bestimmungen und Standordnungen statt.">
+            Note: AscendNorth Training offers private training. No weapons or ammunition are sold.
+            All training is conducted strictly within the applicable legal framework and range regulations.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span data-de="© AscendNorth Training. Fokus. Vertrauen. Kontrolle.">© AscendNorth Training. Focus. Trust. Control.</span>
+      <span>
+  <a href="impressum.html" data-de="Impressum">Impressum</a>
+  &nbsp;|&nbsp;
+  <a href="datenschutz.html" data-de="Datenschutzerklärung">Privacy</a>
+  &nbsp;|&nbsp;
+  <a href="haftung.html" data-de="Haftungsausschluss (DE)">Liability (DE)</a>
+  &nbsp;|&nbsp;
+  <a href="disclaimer.html" data-de="Haftungsausschluss (EN)">Disclaimer (EN)</a>
+</span>
+    </div>
+    <script>
+      const langButtons = document.querySelectorAll('.lang-btn');
+      const elements = document.querySelectorAll('[data-de]');
+
+      langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.dataset.lang;
+          langButtons.forEach(b => b.classList.toggle('active', b === btn));
+
+          elements.forEach(el => {
+            if (!el.dataset.en) {
+              el.dataset.en = el.textContent.trim();
+            }
+            if (lang === 'de') {
+              el.textContent = el.dataset.de;
+            } else {
+              el.textContent = el.dataset.en;
+            }
+          });
+        });
+      });
+    </script>
+  </footer>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -39,7 +39,7 @@
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 1.5rem 1.5rem 2.5rem;
+      padding: 1.5rem 1.5rem 2.5rem 0;
     }
 
     .site-header {
@@ -371,26 +371,14 @@
       color: var(--text-muted);
     }
 
-        .footer-inner a:hover {
+    .footer-inner a {
+      color: var(--accent-soft);
+      text-decoration: none;
+      font-size: 0.8rem;
+    }
+
+    .footer-inner a:hover {
       text-decoration: underline;
-    }
-
-    /* Zusätzlicher Sprachumschalter nur für Mobilgeräte */
-    .lang-switch-mobile {
-      display: none;
-    }
-
-    @media (max-width: 600px) {
-      /* Alten Umschalter im Header auf kleinen Bildschirmen ausblenden */
-      .header-inner .lang-switch {
-        display: none;
-      }
-
-      /* Neuen mobilen Umschalter anzeigen */
-      .lang-switch-mobile {
-        display: inline-flex;
-        margin-bottom: 0.8rem;
-      }
     }
   </style>
 </head>
@@ -399,9 +387,14 @@
     <header class="site-header">
       <div class="container header-inner">
         <div class="logo-block">
-          <span class="logo-main">AscendNorth Training</span>
-          <span class="logo-sub" data-de="Fokus. Vertrauen. Kontrolle.">Focus. Trust. Control.</span>
-        </div>
+<img src="ascendnorth-logo-final.svg" 
+     alt="AscendNorth Training Logo" 
+     style="height:110px; width:auto; margin-left:-30px; display:block;">
+ <span class="logo-sub" 
+      style="margin-left:20px; letter-spacing:8px; margin-top:-14px; display:inline-block; font-size:0.75rem;">
+  Focus. Trust. Control.
+</span>
+</div>
         <div class="lang-switch">
           <button class="lang-btn active" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="de">DE</button>
@@ -413,12 +406,6 @@
       <!-- HERO -->
       <section class="hero">
         <div>
-          <!-- mobiler Sprachumschalter: wird nur auf kleinen Screens angezeigt -->
-          <div class="lang-switch lang-switch-mobile">
-            <button class="lang-btn active" data-lang="en">EN</button>
-            <button class="lang-btn" data-lang="de">DE</button>
-          </div>
-
           <div class="hero-kicker" data-de="Pistolentraining für Einsteiger">
             Pistol training for beginners
           </div>
@@ -719,21 +706,32 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <section>
-        <div class="section-title" data-de="Kontakt & Informationen">
-          Contact & information
-        </div>
-        <div class="contact-block">
-          <div class="contact-lines">
-            <div>
-              <div class="contact-label" data-de="E-Mail">E-mail</div>
-              <div>christian-klinger@gmx.net</div>
-            </div>
-            <div>
-              <div class="contact-label" data-de="Web">Web</div>
-              <div>ascendnorth-training.com</div>
-            </div>
+    <!-- CONTACT -->
+<section>
+  <div class="section-title" data-de="Kontakt & Informationen">
+    Contact & information
+  </div>
+
+  <div class="contact-block">
+    <div class="contact-lines">
+
+      <!-- E-MAIL -->
+      <div>
+        <div class="contact-label" data-de="E-Mail">E-mail</div>
+        <div>kontakt@ascendnorth-training.com</div>
+      </div>
+
+      <!-- WEBSITE → entfernt -->
+      <!--
+      <div>
+        <div class="contact-label" data-de="Web">Web</div>
+        <div>ascendnorth-training.com</div>
+      </div>
+      -->
+
+    </div>
+  </div>
+</section>
             <p class="legal-note"
                data-de="Hinweis: Alle Schießtrainings finden ausschließlich im Rahmen der geltenden gesetzlichen Bestimmungen und der jeweiligen Standordnung statt. Die Teilnahme erfolgt eigenverantwortlich und setzt körperliche und geistige Eignung voraus. Es werden keine Waffen oder Munition verkauft.">
               Note: All firearms trainings are conducted strictly within the applicable legal

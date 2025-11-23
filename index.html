@@ -382,20 +382,24 @@
       text-decoration: underline;
     }
 @media (max-width: 600px) {
+
+  /* Header wieder normal: Logo links, Button rechts */
   .header-inner {
-    flex-direction: column;        /* Logo oben, EN/DE darunter */
-    align-items: flex-start;       /* linksbündig */
-    gap: 0.5rem;                   /* kleiner Abstand dazwischen */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
+  /* Logo-Größe am Handy */
   .logo-block img {
-    height: 110px !important;       /* großes Handy-Logo */
-    margin-left: 0 !important;     /* kein negativer Rand am Handy */
+    height: 110px !important; /* oder deine gewünschte Größe */
+    margin-left: -10px !important;
   }
 
+  /* DE/EN Button weiter nach unten schieben */
   .lang-switch {
-    transform: scale(0.9);
-    align-self: flex-start;        /* EN/DE ebenfalls links */
+    margin-top: 10px; /* Abstand nach unten */
+    transform: scale(0.9); /* Größe leicht reduziert – kannst du erhöhen oder entfernen */
   }
 }
   </style>

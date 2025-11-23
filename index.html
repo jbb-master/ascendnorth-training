@@ -382,26 +382,26 @@
       text-decoration: underline;
     }
 @media (max-width: 600px) {
-
-  /* Header wieder normal: Logo links, Button rechts */
+  /* Logo und Button weiter untereinander anordnen */
   .header-inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;     /* untereinander */
+    align-items: stretch;       /* volle Breite */
+    gap: 0.5rem;                /* kleiner Abstand zwischen Logo und Button */
   }
 
-  /* Logo-Größe am Handy */
+  /* Logo am Handy - groß, linksbündig */
   .logo-block img {
-    height: 110px !important; /* oder deine gewünschte Größe */
-    margin-left: -10px !important;
+    height: 110px !important;   /* oder dein Wert: 120, 130... */
+    margin-left: 0 !important;  /* kein negativer Rand am Handy */
   }
 
-  /* DE/EN Button weiter nach unten schieben */
+  /* DE/EN-Button am rechten Rand, unter dem Logo */
   .lang-switch {
-    margin-top: 10px; /* Abstand nach unten */
-    transform: scale(0.9); /* Größe leicht reduziert – kannst du erhöhen oder entfernen */
+    align-self: flex-end;       /* nach rechts schieben */
+    margin-top: 0.5rem;         /* Abstand zum Logo nach unten */
+    transform: scale(0.9);      /* leicht kleiner, kannst du auch entfernen */
   }
-}
+}}
   </style>
 </head>
 <body>

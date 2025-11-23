@@ -380,22 +380,6 @@
     .footer-inner a:hover {
       text-decoration: underline;
     }
-
-    /* Layout-Anpassung nur für kleinere Bildschirme (Tablet/Handy) */
-    @media (max-width: 900px) {
-      /* Container bekommt links wieder Innenabstand,
-         damit Logo nicht am Rand klebt / abgeschnitten wird */
-      .container {
-        padding: 1.5rem 1.5rem 2.5rem 1.5rem;
-      }
-
-      /* Logo und Sprachumschalter untereinander statt gequetscht nebeneinander */
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -403,7 +387,7 @@
     <header class="site-header">
       <div class="container header-inner">
         <div class="logo-block">
-<img src="ascendnorth-logo-final.svg" 
+<img src="ascendnorth-logo-master.svg" 
      alt="AscendNorth Training Logo" 
      style="height:110px; width:auto; margin-left:-30px; display:block;">
  <span class="logo-sub" 

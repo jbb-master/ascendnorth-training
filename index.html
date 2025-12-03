@@ -778,28 +778,30 @@
           <a href="disclaimer.html" data-de="Haftungsausschluss (EN)">Disclaimer (EN)</a>
         </span>
       </div>
-      <script>
-        const langButtons = document.querySelectorAll('.lang-btn');
-        const elements = document.querySelectorAll('[data-de]');
+<script>
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const elements = document.querySelectorAll('[data-de]');
 
-        langButtons.forEach(btn => {
-          btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            langButtons.forEach(b => b.classList.toggle('active', b === btn));
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      langButtons.forEach(b => b.classList.toggle('active', b === btn));
 
-            elements.forEach(el => {
-              if (!el.dataset.en) {
-                el.dataset.en = el.textContent.trim();
-              }
-              if (lang === 'de') {
-                el.textContent = el.dataset.de;
-              } else {
-                el.textContent = el.dataset.en;
-              }
-            });
-          });
-        });
-      </script>
+      elements.forEach(el => {
+        // Originaltext einmalig als data-en speichern (inkl. HTML)
+        if (!el.dataset.en) {
+          el.dataset.en = el.innerHTML.trim();
+        }
+
+        if (lang === 'de') {
+          el.innerHTML = el.dataset.de;
+        } else {
+          el.innerHTML = el.dataset.en;
+        }
+      });
+    });
+  });
+</script>
     </footer>
   </div>
 </body>

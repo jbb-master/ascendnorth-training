@@ -381,6 +381,19 @@
     .footer-inner a:hover {
       text-decoration: underline;
     }
+  .begleite-row {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .begleite-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
   /* Logo und Button weiter untereinander anordnen */
   .header-inner {
@@ -401,18 +414,7 @@
     margin-top: 0.5rem;         /* Abstand zum Logo nach unten */
     transform: scale(0.9);      /* leicht kleiner, kannst du auch entfernen */
   }
-  .begleite-row {
-  display: grid;
-  grid-template-columns: 1.4fr 0.9fr;
-  gap: 1.5rem;
-  align-items: start;
-}
 
-@media (max-width: 768px) {
-  .begleite-row {
-    grid-template-columns: 1fr;
-  }
-}
 }
   </style>
 </head>
